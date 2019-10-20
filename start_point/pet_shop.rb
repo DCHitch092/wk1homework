@@ -74,3 +74,10 @@ def customer_can_afford_pet(identifier, new_pet)
     return false
   end
 end
+
+def sell_pet_to_customer(dataname, pet, identifier)
+#add pet to customers
+  identifier[:pets].push(pet)
+#increase pet shop's pet sold counter
+  dataname[:admin][:pets_sold] += 1
+end
