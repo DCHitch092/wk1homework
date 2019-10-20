@@ -20,4 +20,14 @@ end
 
 def stock_count(dataname)
   dataname[:pets].count
-end 
+end
+
+def pets_by_breed(dataname, breed_name)
+  breed_array = []
+    for pet in dataname[:pets]
+      if pet[:breed] == breed_name
+        breed_array.push(breed_name)
+      end
+    end
+  return breed_array
+end
