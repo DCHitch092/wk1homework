@@ -46,3 +46,7 @@ def remove_pet_by_name(dataname, pet_name)
     result = find_pet_by_name(dataname, pet_name)
     dataname[:pets].delete(result)
 end
+
+def add_pet_to_stock(dataname, new_pet)
+  dataname[:pets].push(new_pet)
+end
