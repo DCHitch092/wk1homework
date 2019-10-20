@@ -39,5 +39,10 @@ def find_pet_by_name(dataname, pet_name)
       return animal
     end
   end
-  return nil 
+  return nil
+end
+
+def remove_pet_by_name(dataname, pet_name)
+    result = find_pet_by_name(dataname, pet_name)
+    dataname[:pets].delete(result)
 end
