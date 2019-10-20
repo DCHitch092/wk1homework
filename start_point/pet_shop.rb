@@ -82,4 +82,6 @@ def sell_pet_to_customer(dataname, pet, identifier)
   dataname[:admin][:pets_sold] += 1
 #decrease customer cash
   identifier[:cash] -= pet[:price]
+#remove cash from pet_shop
+  dataname[:admin][:total_cash] += pet[:price]
 end
