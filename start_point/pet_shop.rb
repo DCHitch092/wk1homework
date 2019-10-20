@@ -34,13 +34,28 @@ end
 
 
 def find_pet_by_name(dataname, pet_name)
-  for animal in dataname[:pets]
-    if animal[:name] == pet_name
-      return animal
-    end
-  end
-  return nil
+   for pet in dataname[:pets]
+     if pet_name == pet[:name]
+       return pet
+     end
+   end
+   return nil
 end
+#
+# found_pet = dataname[:pets].key(pet_name)
+# puts found_pet
+# #
+# # found_pet = dataname[:pets].any? {|pet| pet[:name] == pet_name}
+# # if found_pet == true
+# #   dataname[:pets][:name]
+# #   puts "pet #{pet_name} found at #{found_pet}"
+# #
+# #   return dataname[:pets][found_pet][:name]
+# #   if found_pet.nil?
+# #     retun nil
+# #   else
+# #   end
+
 
 def remove_pet_by_name(dataname, pet_name)
     result = find_pet_by_name(dataname, pet_name)
@@ -76,12 +91,22 @@ def customer_can_afford_pet(identifier, new_pet)
 end
 
 def sell_pet_to_customer(dataname, pet, identifier)
-#add pet to customers
-  identifier[:pets].push(pet)
-#increase pet shop's pet sold counter
-  dataname[:admin][:pets_sold] += 1
-#decrease customer cash
-  identifier[:cash] -= pet[:price]
-#remove cash from pet_shop
-  dataname[:admin][:total_cash] += pet[:price]
+  pet_check = find_pet_by_name(dataname, pet)
+  puts pet_check
+  if pet_check.nil? == true
+    #add pet to customers
+    identifier[:pets].push(pet)
+    #increase pet shop's pet sold counter
+    dataname[:admin][:pets_sold] += 1
+    #decrease customer cash
+    identifier[:cash] -= pet[:price]
+    #remove cash from pet_shop
+    dataname[:admin][:total_cash] += pet[:price]
+
+  elsif pet_check.nil? == false
+    puts "the pet sale cannot go through"
+    return nil 
+
+  end
+
 end
