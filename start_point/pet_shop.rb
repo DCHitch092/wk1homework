@@ -39,4 +39,5 @@ def find_pet_by_name(dataname, pet_name)
       return animal
     end
   end
+  return nil 
 end
