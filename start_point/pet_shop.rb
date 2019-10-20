@@ -80,4 +80,6 @@ def sell_pet_to_customer(dataname, pet, identifier)
   identifier[:pets].push(pet)
 #increase pet shop's pet sold counter
   dataname[:admin][:pets_sold] += 1
+#decrease customer cash
+  identifier[:cash] -= pet[:price]
 end
