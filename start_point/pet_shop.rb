@@ -8,4 +8,8 @@ end
 
 def add_or_remove_cash(dataname,amount)
   dataname[:admin][:total_cash] += amount
+end
+
+def pets_sold(dataname)
+  dataname[:admin][:pets_sold]
 end  
