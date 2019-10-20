@@ -50,3 +50,7 @@ end
 def add_pet_to_stock(dataname, new_pet)
   dataname[:pets].push(new_pet)
 end
+
+def customer_cash(identifier)
+  identifier[:cash]
+end
