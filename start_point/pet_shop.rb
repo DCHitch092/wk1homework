@@ -12,4 +12,8 @@ end
 
 def pets_sold(dataname)
   dataname[:admin][:pets_sold]
-end  
+end
+
+def increase_pets_sold(dataname,number_sold)
+  dataname[:admin][:pets_sold] = number_sold
+end
