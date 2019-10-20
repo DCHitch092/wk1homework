@@ -31,3 +31,12 @@ def pets_by_breed(dataname, breed_name)
     end
   return breed_array
 end
+
+
+def find_pet_by_name(dataname, pet_name)
+  for animal in dataname[:pets]
+    if animal[:name] == pet_name
+      return animal
+    end
+  end
+end
